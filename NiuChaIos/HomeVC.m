@@ -13,6 +13,8 @@
 #import "MyTeamVC.h"
 #import "FeedBackVC.h"
 #import "PartnerConnectVC.h"
+#import "FenXiangVC.h"
+#import "LogInVC.h"
 
 #import "HomeButton.h"
 #import "MyCollectionCell.h"
@@ -32,18 +34,6 @@ typedef NS_ENUM(NSInteger, CollectionViewType){
     CollectionView_TeamManger
 };
 
-//@implementation HomeButton
-//
-//
-//- (CGRect)imageRectForContentRect:(CGRect)contentRect{
-//    return CGRectMake(0, 42, Screen_Width/3.0 + 1, 2);
-//}
-//
-//- (CGRect)titleRectForContentRect:(CGRect)contentRect{
-//    return CGRectMake(0, 0, (Screen_Width - 20)/3, 40);
-//}
-//
-//@end
 
 @interface HomeVC ()
 <
@@ -108,8 +98,6 @@ UITableViewDelegate
     [self setNavRightBtn];
     [self buttonsViewSet];
     
-    
-    SKLog(@"123");
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
   
 }
@@ -172,7 +160,7 @@ UITableViewDelegate
     [_manyBusCollectionView registerClass:[MyCollectionCell class] forCellWithReuseIdentifier:@"CELL"];
     _lastView = _manyBusView;
 }
-
+/*
 - (void)addImplementView{
     _implementView = [[[NSBundle mainBundle]loadNibNamed:@"kaiZhanYeWuView" owner:self options:nil] lastObject];
     _implementView.frame = CGRectMake(0, 108, Screen_Width, Screen_Height - 108);
@@ -189,6 +177,8 @@ UITableViewDelegate
     
     [_teamCollectionView registerClass:[MyCollectionCell class] forCellWithReuseIdentifier:@"CELL"];
 }
+*/
+
 - (void)addLeftSideView{
     _leftSideView = [[[NSBundle mainBundle]loadNibNamed:@"leftSideView" owner:self options:nil]lastObject];
     _leftSideView.frame = CGRectMake(-220, 20, 220, Screen_Height - 20);
@@ -317,10 +307,10 @@ UITableViewDelegate
 
 - (IBAction)buttonViewAction:(HomeButton *)sender {
     
-    if (_lastView) {
-        [_lastView removeFromSuperview];
-        _lastView = nil;
-    }
+//    if (_lastView) {
+//        [_lastView removeFromSuperview];
+//        _lastView = nil;
+//    }
     
     [_lastSelectBtn setImage:[self origionalImage:@"bg_nav_2"] forState:UIControlStateNormal];
     [_lastSelectBtn setTitleColor:UIColorFromHex(0x626262) forState:UIControlStateNormal];
@@ -332,23 +322,24 @@ UITableViewDelegate
     if (sender.tag == 110) {
         NSLog(@"100");
         
-        [self addManyBusView];
-        _lastView = _manyBusView;
+//        [self addManyBusView];
+//        _lastView = _manyBusView;
         _viewTpye = CollectionView_ManyBusiness;
     }else if (sender.tag == 111){
         NSLog(@"111");
         
-        [self addImplementView];
-        _lastView = _implementView;
+//        [self addImplementView];
+//        _lastView = _implementView;
         _viewTpye = CollectionView_ImplementBusiness;
         
     }else if (sender.tag == 112){
         NSLog(@"112");
-        [self addTeamMangerView];
-        _lastView = _teamMangerView;
+//        [self addTeamMangerView];
+//        _lastView = _teamMangerView;
         _viewTpye = CollectionView_TeamManger;
     }
 
+    [_manyBusCollectionView reloadData];
 }
 
 #pragma mark 设置导航栏又按钮
@@ -358,11 +349,11 @@ UITableViewDelegate
     
     self.navigationItem.leftBarButtonItem = leftBarBtn;
     
-    UIBarButtonItem *addBarBtn = [[UIBarButtonItem alloc]initWithImage:[self origionalImage:@"kuaijie"] style:UIBarButtonItemStylePlain target:self action:@selector(addBtnAction:)];
+    UIBarButtonItem *addBarBtn = [[UIBarButtonItem alloc]initWithImage:[self origionalImage:@"kuaijie"] style:UIBarButtonItemStylePlain target:self action:@selector(homeAddBtnAction:)];
     addBarBtn.tag = 120;
-    UIBarButtonItem *richengBarBtn = [[UIBarButtonItem alloc]initWithImage:[self origionalImage:@"richeng"] style:UIBarButtonItemStylePlain target:self action:@selector(addBtnAction:)];
+    UIBarButtonItem *richengBarBtn = [[UIBarButtonItem alloc]initWithImage:[self origionalImage:@"richeng"] style:UIBarButtonItemStylePlain target:self action:@selector(homeAddBtnAction:)];
     richengBarBtn.tag = 121;
-    UIBarButtonItem *searchBarBtn = [[UIBarButtonItem alloc]initWithImage:[self origionalImage:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(addBtnAction:)];
+    UIBarButtonItem *searchBarBtn = [[UIBarButtonItem alloc]initWithImage:[self origionalImage:@"search"] style:UIBarButtonItemStylePlain target:self action:@selector(homeAddBtnAction:)];
     searchBarBtn.tag = 122;
     
     self.navigationItem.rightBarButtonItems = @[addBarBtn,richengBarBtn,searchBarBtn];
@@ -370,7 +361,7 @@ UITableViewDelegate
 
 
 /*            导航栏有按钮方法实现            */
-- (void)addBtnAction:(UIBarButtonItem *)sender{
+- (void)homeAddBtnAction:(UIBarButtonItem *)sender{
     if (sender.tag == 120) {           //快捷
         SKLog(@"120");
         
@@ -386,7 +377,11 @@ UITableViewDelegate
         SKLog(@"121");
     }else if (sender.tag == 122){       //搜索
         SKLog(@"122");
+        LogInVC *loginVC = [[LogInVC alloc]init];
+        loginVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentViewController:loginVC animated:YES completion:nil];
     }
+    
 }
 
 
@@ -680,32 +675,30 @@ UITableViewDelegate
     
     if (_showLeftSideView) {
          [self hideLeftSideView];
+        UIViewController *controller = nil;
         switch (indexPath.row) {
             case 0:                     //公司
             {
                 SKLog(@"0");
-                MyTeamVC *teamVC = [[MyTeamVC alloc]init];
-                [self.navigationController pushViewController:teamVC animated:YES];
-                
+                controller = [[MyTeamVC alloc]init];
             }
                 break;
             case 1:                     //系统设置
             {
                 SKLog(@"1");
-                SettingVC *settingVC = [[SettingVC alloc]init];
-                [self.navigationController pushViewController:settingVC animated:YES];
+                controller = [[SettingVC alloc]init];
             }
                 break;
             case 2:                     //意见反馈
             {
                 SKLog(@"2");
-                FeedBackVC *feedBackVC = [[FeedBackVC alloc]init];
-                [self.navigationController pushViewController:feedBackVC animated:YES];
+                controller = [[FeedBackVC alloc]init];
             }
                 break;
             case 3:                     //分享给好友
             {
                 SKLog(@"3");
+                controller = [[FenXiangVC alloc]init];
             }
                 break;
             case 4:                     //退出
@@ -716,6 +709,7 @@ UITableViewDelegate
             default:
                 break;
         }
+        [self.navigationController pushViewController:controller animated:YES];
     }else{
         [self hideRightSideView];
         switch (indexPath.row) {

@@ -1,14 +1,13 @@
 //
-//  HomeVC.h
+//  LogInVC.h
 //  NiuChaIos
 //
-//  Created by SharkCome on 15/3/26.
+//  Created by SharkCome on 15/4/10.
 //  Copyright (c) 2015年 gujianjun. All rights reserved.
 //
 
 #import "RootVC.h"
 
-
-@interface HomeVC : RootVC
+@interface LogInVC : RootVC
 
 @end

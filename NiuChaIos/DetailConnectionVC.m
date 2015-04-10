@@ -99,7 +99,7 @@ typedef enum {
     }else if (_type == Tableview_SaleChance){
         return _tableSaleArray.count;
     }else{
-        return 0;
+        return 1;
     }
 //    return _tableSaleArray.count;
 }
@@ -111,7 +111,7 @@ typedef enum {
     }else if (_type == Tableview_SaleChance){
         return [_tableSaleArray[section] count];
     }else{
-        return 0;
+        return 5;
     }
     return [_tableSaleArray[section] count];
 }
@@ -135,9 +135,19 @@ typedef enum {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }else{
-        DetailConnnectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCellID"];
-        cell.cellArrowImage.image = [self origionalImage:@"more"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dongTaiCellID"];
+        
+        UIView *backView = [cell viewWithTag:132];
+        backView.layer.borderColor = UIColor_Fenge_Line.CGColor;
+        backView.layer.borderWidth = 0.5;
+        
+        UILabel *title = (UILabel *)[cell viewWithTag:130];
+        title.text = @"今天心情不好，好像找个人打一架啊。。。。";
+        
+        UILabel *timeLabel = (UILabel *)[cell viewWithTag:131];
+        timeLabel.text = @"2014/12/2 15:32";
+        
+        cell.contentView.backgroundColor = UIColor_System_Silver;
         return cell;
     }
 }
@@ -169,12 +179,16 @@ typedef enum {
     }else if (_type == Tableview_SaleChance){
         return 62;
     }else{
-        return 44;
+        return 70;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 20;
+    if (_type == Tableview_BasicInfo || _type == Tableview_SaleChance) {
+        return 20;
+    }else{
+        return 0;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -232,6 +246,7 @@ typedef enum {
     }else{
         SKLog(@"Tableview_DongTai");
     }
+    
     
 //    SKLog(@"%@",NSStringFromSelector(_cmd));
 }

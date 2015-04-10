@@ -14,6 +14,7 @@
 #import "AddChanceVC.h"
 #import "NewRichengVC.h"
 #import "RichengListVC.h"
+#import "GenJinRecordVC.h"
 
 #define Detail_Collection_CellID   @"detailCollectionCellID"
 
@@ -220,17 +221,18 @@ UIActionSheetDelegate
 
 #pragma mark actionSheet delegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    UIViewController *controller = nil;
     switch (buttonIndex) {
         case 0:             //跟进纪录
         {
             SKLog(@"0");
+            controller = [[GenJinRecordVC alloc]init];
         }
             break;
         case 1:             //日程
         {
             SKLog(@"1");
-            RichengListVC *richengListVC = [[RichengListVC alloc]init];
-            [self.navigationController pushViewController:richengListVC animated:YES];
+            controller = [[RichengListVC alloc]init];
         }
             break;
         case 2:             //拍照
@@ -251,6 +253,7 @@ UIActionSheetDelegate
         default:
             break;
     }
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark 返回上一个页面
