@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC">
+            <connections>
+                <outlet property="manyBusCollectionView" destination="bLA-tv-Kwc" id="YQL-lY-k7z"/>
+                <outlet property="manyBusView" destination="iN0-l3-epB" id="Vb9-ZW-vUp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bLA-tv-Kwc">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                    <collectionViewLayout key="collectionViewLayout" id="vVy-EF-MJm" customClass="MyFlowOut"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="RSz-vG-7Dl"/>
+                        <outlet property="delegate" destination="-1" id="gj3-2l-Qn1"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bLA-tv-Kwc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Bb-TY-3Un"/>
+                <constraint firstAttribute="bottom" secondItem="bLA-tv-Kwc" secondAttribute="bottom" id="FHS-gw-qvo"/>
+                <constraint firstAttribute="trailing" secondItem="bLA-tv-Kwc" secondAttribute="trailing" id="L8L-ty-kdA"/>
+                <constraint firstItem="bLA-tv-Kwc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OmZ-zI-6rb"/>
+            </constraints>
+            <point key="canvasLocation" x="400" y="379"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

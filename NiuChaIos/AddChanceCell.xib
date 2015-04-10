@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="AddChanceCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBY-PG-Qsd">
+                        <rect key="frame" x="5" y="0.0" width="310" height="43"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-or-PAY">
+                        <rect key="frame" x="48" y="11" width="36" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="jTx-bc-ipw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ax1-pK-yfk">
+                        <rect key="frame" x="290" y="14" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="H13-so-UFz"/>
+                            <constraint firstAttribute="height" constant="16" id="wHy-YZ-IAg"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-Fe-tci">
+                        <rect key="frame" x="10" y="11" width="21" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="JCy-TA-gJG"/>
+                            <constraint firstAttribute="width" constant="21" id="wsR-7Y-91w"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ax1-pK-yfk" secondAttribute="trailing" constant="14" id="0BO-Ok-i8R"/>
+                    <constraint firstAttribute="bottom" secondItem="ZBY-PG-Qsd" secondAttribute="bottom" id="10o-0P-Dzc"/>
+                    <constraint firstAttribute="centerY" secondItem="gpa-or-PAY" secondAttribute="centerY" id="At1-0M-Zr1"/>
+                    <constraint firstAttribute="centerY" secondItem="zdi-Fe-tci" secondAttribute="centerY" id="ISR-iJ-EmZ"/>
+                    <constraint firstItem="ZBY-PG-Qsd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="U4C-2l-8ah"/>
+                    <constraint firstItem="gpa-or-PAY" firstAttribute="leading" secondItem="zdi-Fe-tci" secondAttribute="trailing" constant="17" id="YAM-ZX-QlW"/>
+                    <constraint firstItem="ZBY-PG-Qsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YHx-tV-iGB"/>
+                    <constraint firstItem="zdi-Fe-tci" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="bQG-F2-szt"/>
+                    <constraint firstAttribute="trailing" secondItem="ZBY-PG-Qsd" secondAttribute="trailing" constant="5" id="n3I-ie-zvH"/>
+                    <constraint firstAttribute="centerY" secondItem="ax1-pK-yfk" secondAttribute="centerY" id="xgA-mI-Ohe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="arrowImage" destination="ax1-pK-yfk" id="EVK-2w-a2z"/>
+                <outlet property="arrowImageHeightCon" destination="wHy-YZ-IAg" id="yEo-ai-x60"/>
+                <outlet property="arrowImageTrailCon" destination="0BO-Ok-i8R" id="0VZ-1q-1XC"/>
+                <outlet property="arrowImageWidthCon" destination="wHy-YZ-IAg" id="eZP-Fp-4hF"/>
+                <outlet property="backView" destination="ZBY-PG-Qsd" id="C7T-er-dQ7"/>
+                <outlet property="cellImage" destination="zdi-Fe-tci" id="oMU-7Q-GBL"/>
+                <outlet property="cellLabel" destination="gpa-or-PAY" id="N1a-cK-MTp"/>
+            </connections>
+            <point key="canvasLocation" x="504" y="241"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

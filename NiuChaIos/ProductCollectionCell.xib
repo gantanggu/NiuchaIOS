@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LpR-v2-KTh" customClass="ProductsCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="36"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppo-Mh-Yvq">
+                        <rect key="frame" x="5" y="3" width="80" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uho-Hq-8kX" customClass="ProductButton">
+                        <rect key="frame" x="67" y="2" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="0Xu-RW-wEx"/>
+                            <constraint firstAttribute="width" constant="20" id="UbK-0m-a9y"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tMT-WG-fWO">
+                        <rect key="frame" x="20" y="11" width="15" height="15"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="JlX-Nk-Mec"/>
+                            <constraint firstAttribute="width" constant="15" id="RNf-e2-DgN"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ppo-Mh-Yvq" secondAttribute="bottom" constant="3" id="6qh-Nt-1SG"/>
+                <constraint firstAttribute="trailing" secondItem="ppo-Mh-Yvq" secondAttribute="trailing" constant="5" id="Mre-K3-301"/>
+                <constraint firstAttribute="centerY" secondItem="tMT-WG-fWO" secondAttribute="centerY" id="SGc-oJ-04T"/>
+                <constraint firstAttribute="trailing" secondItem="Uho-Hq-8kX" secondAttribute="trailing" constant="3" id="WDm-8q-zb6"/>
+                <constraint firstItem="ppo-Mh-Yvq" firstAttribute="top" secondItem="LpR-v2-KTh" secondAttribute="top" constant="3" id="eZp-MR-jF5"/>
+                <constraint firstItem="Uho-Hq-8kX" firstAttribute="top" secondItem="LpR-v2-KTh" secondAttribute="top" constant="4" id="hUm-Eh-5PQ"/>
+                <constraint firstItem="tMT-WG-fWO" firstAttribute="leading" secondItem="LpR-v2-KTh" secondAttribute="leading" constant="20" id="nqh-pK-31c"/>
+                <constraint firstItem="ppo-Mh-Yvq" firstAttribute="leading" secondItem="LpR-v2-KTh" secondAttribute="leading" constant="5" id="yKG-eI-SFB"/>
+            </constraints>
+            <size key="customSize" width="117" height="36"/>
+            <connections>
+                <outlet property="cellBtn" destination="Uho-Hq-8kX" id="uTI-jG-gW6"/>
+                <outlet property="cellImage" destination="tMT-WG-fWO" id="fhb-pr-geJ"/>
+                <outlet property="cellName" destination="ppo-Mh-Yvq" id="9Pb-bT-GQM"/>
+            </connections>
+            <point key="canvasLocation" x="814" y="262"/>
+        </collectionViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

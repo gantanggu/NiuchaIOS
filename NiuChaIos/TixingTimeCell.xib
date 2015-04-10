@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ek6-sQ-H4R" customClass="TixingTimeCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ek6-sQ-H4R" id="I4m-jl-Cf9">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50A-Hr-MHB">
+                        <rect key="frame" x="14" y="12" width="40" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="V7f-Uy-NN2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iY5-Fz-dNX">
+                        <rect key="frame" x="290" y="13" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Y2a-58-3hW"/>
+                            <constraint firstAttribute="height" constant="15" id="vp4-I5-azK"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="iY5-Fz-dNX" secondAttribute="trailing" constant="15" id="Ewj-NG-KFD"/>
+                    <constraint firstItem="iY5-Fz-dNX" firstAttribute="top" secondItem="I4m-jl-Cf9" secondAttribute="top" constant="13" id="RWG-HO-rXY"/>
+                    <constraint firstItem="50A-Hr-MHB" firstAttribute="top" secondItem="I4m-jl-Cf9" secondAttribute="top" constant="12" id="XCw-ai-WEa"/>
+                    <constraint firstItem="50A-Hr-MHB" firstAttribute="leading" secondItem="I4m-jl-Cf9" secondAttribute="leading" constant="14" id="p6i-11-QDk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="cellLabel" destination="50A-Hr-MHB" id="2n2-K9-pjm"/>
+                <outlet property="cellRightImage" destination="iY5-Fz-dNX" id="G4R-Hs-lZb"/>
+            </connections>
+            <point key="canvasLocation" x="428" y="218"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

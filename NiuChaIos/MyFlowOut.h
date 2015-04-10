@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MyFlowOut.h
 //  NiuChaIos
 //
 //  Created by SharkCome on 15/3/26.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MyFlowOut : UICollectionViewFlowLayout
 
 @end
-
