@@ -108,6 +108,8 @@ UITableViewDelegate
     [self setNavRightBtn];
     [self buttonsViewSet];
     
+    
+    SKLog(@"123");
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
   
 }
